@@ -1,0 +1,211 @@
+/* этот файл не используется, после перехода на SASS */
+
+* {
+    font-family: 'Roboto', sans-serif; /* ко всем текстовым элементам применяем шрифт Roboto */
+}
+
+header {
+    position: relative; /* для абсолютного позиционирования дочернего .subheader */
+}
+
+nav {
+    position: fixed; /* делаем наше меню фиксированным (липким) */
+    width: 100%; /* устанавливаем ширину 100% родителя */
+    height: 50px;
+    background: #212121;
+}
+
+.menu {
+    display: flex; /* для позиционирования дочерних Li технологией flexbox */
+    justify-content: space-between; /* выравниваем элементы (дочерние) по главной оси (по-горизонтали) */ 
+    margin: 0; /* т.к. reboot выставляет margin-bottom: 1 rem;  */
+    padding: 13px 70px; /* немного увеличиль вертик. отступ, чтобы подвыравнять положение ссылок относительно горизонтального меню по центру */
+    list-style-type: none; /* отключаем точки-маркеры перед Li */
+}
+
+.menu .menu_link { /* стилезуем сами ссылки */
+    color: #FFFFFF;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.menu .menu_item {
+    border-right: 2px dotted black; /* создаем разделители, задавая правую границу */
+    padding-right: 28px; /* создаем правый внутр. отступ до разделителя  */
+}
+
+/*111111111111111111111111111111111111111111111111111111111111111111  */
+.menu .menu_link, .subheader .subheader_phone {
+    text-decoration: none;
+}
+/*111111111111111111111111111111111111111111111111111111111111111111  */
+
+.subheader {
+    position: absolute; /* будем "натягивать" нижнюю часть хедера на секцию, для получения эффекта прозрачности */
+    width: 100%; /* нижняя часть хедера "сплющилась", но установив ширину в 100% родителя, всё гуд */
+    top: 50px; /* смещаем на 50 пикселей вниз от верхней грани наш нижний хедер, потому-что после фиксации нав. меню, произошло наложение */
+    height: 87px;
+    background: rgba(0, 0, 0, 0.6) /* opacity: 0.6; мы не задаем, т.к. прозрачность будет и у ссылок и у кнопки */
+}
+
+.subheader .subheader_logo {
+    display: block;
+    margin-top: 16px;
+    max-width: 100%; /* макс. шир. элемента. Если сменится логотип, он не будет вылезать за колонку с заданым колич. секций */
+}
+
+.subheader .subheader_official {
+    margin-top: 6px;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 13px;
+    opacity: 0.5; /* текст будет на 50% прозрачный */
+}
+
+.subheader .subheader_call {
+    margin-top: 19px;
+    text-align: right;
+    color: #FFFFFF;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 10px; /* пришлось установить, элемент скатывался вниз */
+}
+
+.subheader .subheader_phone {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 12px; /* пришлось установить, элемент скатывался вниз */
+} 
+
+.subheader .subheader_btn { /* кнопка */
+    margin-top: 19px;
+    width: 172px;
+    height: 46px;
+    background-image: linear-gradient(0deg, #1EACC7 0%, #4CE2FF 100%);
+    border: none;
+    border-radius: 4px; /* скругление углов кнопки */
+    box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.12);
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.21);
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.promo {
+    padding: 200px 0 135px 0; /* задаем верхние отступы, вообще верхний паддинг = 150, но из-за смещения нав. меню, после display: fixed; пришлось добавить еще 50px (высота меню)  */
+    min-height: 800px;
+    background: url(../img/uber_bg.jpg) center center/cover no-repeat;
+}
+
+.promo .promo_header {
+    margin: 0;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 60px; /* чтобы текст не съезжал вниз */
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.promo .promo_subheader {
+    margin: 0;
+    margin-top: 22px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 36px; /* чтобы текст не съезжал вниз */
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.promo .promo_descr {
+    margin-top: 23px;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.promo .promo_btn {
+    display: block;
+    margin: 0 auto; /* выравниваем блок по горизонтали */
+    margin-top: 118px;
+    width: 259px;
+    height: 63px;
+    background: linear-gradient(0deg, #1EACC7 0%, #4CE2FF 100%);
+    border: none;
+    border-radius: 4px;
+    box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.12);
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.21);
+    color: #FFFFFF;    
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.benefits {
+    min-height: 850px;
+    padding: 20px 0 64px 0;
+}
+
+.benefits .benefits_label {
+    margin: 0 auto; /* выравнивание по горизонтали */
+    padding: 6px; /* чтобы текст "Преимущества" расположить ровно внутри блока*/
+    width: 115px;
+    height: 27px;
+    background: #000000;
+    font-weight: 400;
+    font-size: 11px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.benefits .benefits_title {
+    margin: 0; /* выравнивание по горизонтали заголовка */
+    margin-top: 30px;
+    color: #222222;
+    font-weight: 700;
+    font-size: 38px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.benefits .benefits_cause_section {
+    margin-top: 25px;
+    display: flex; /* выравниваем дочерние колонки с помощью flex-box */
+    justify-content: space-around; /* выравнивание дочерних лого и текста относительно главной оси */
+    align-items: center; /* выравнивание дочерних лого и текста относительно поперечной оси */
+}
+
+.benefits .benefits_cause_section .benefits_cause_logo {
+    display: flex; /* выравниваем дочерние картинки относительно блоков с помощью flex-box */
+    justify-content: center;
+    align-items: center;
+    width: 116px;
+    height: 116px;
+    background: #1EACC7;
+    border-radius: 100%; /* превращаем квадраты в круги */
+}
+
+.benefits .benefits_cause_section .benefits_cause_text {
+    width: 371px; /* максимальная ширина блоков с текстом, взятая в макете */
+    height: 150px; /* максимальная высота блоков с текстом, взятая в макете */
+    color: #212121;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 21px;
+}
+.benefits .benefits_cause_section .benefits_cause_text .benefits_cause_header {
+    color: #1EACC7;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 21px;
+    /* ну а здесь мы просто перебиваем свойства текста для заголовков, т.к. они находится в том же блоке */
+}
